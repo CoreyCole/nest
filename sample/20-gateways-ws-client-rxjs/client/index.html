@@ -1,10 +1,9 @@
 <html>
 
 <head>
-    <script src="https://unpkg.com/@reactivex/rxjs@6.0.0/dist/global/rxjs.umd.js"></script>
+    <script src="https://unpkg.com/@reactivex/rxjs@5.5.6/dist/global/Rx.js"></script>
     <script>
-        const { WebSocketSubject } = rxjs.webSocket
-        const socket$ = WebSocketSubject.create('ws://localhost:8080');
+        const socket$ = Rx.Observable.webSocket('ws://localhost:8080');
         socket$.subscribe(
                 (data) => console.log(data),
                 (err) => console.error(err),
@@ -14,6 +13,7 @@
             event: 'events',
             data: 'test',
         }));
+        console.log('here')
     </script>
 </head>
 
