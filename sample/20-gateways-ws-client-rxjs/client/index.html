@@ -10,6 +10,10 @@
                 (err) => console.error(err),
                 () => console.warn('Completed!')
             );
+
+        // rxjs websocket automatically serializes JSON as of version 6.0.0
+        // no need for JSON.stringify
+        // see https://github.com/ReactiveX/rxjs/blob/master/CHANGELOG.md#600-beta4-2018-03-29
         socket$.next({
             event: 'events',
             data: 'test',
