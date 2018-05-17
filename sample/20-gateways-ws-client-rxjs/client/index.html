@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script src="https://unpkg.com/@reactivex/rxjs@6.0.0/dist/global/rxjs.umd.js"></script>
+    <script>
+        const { WebSocketSubject } = rxjs.webSocket
+        const socket$ = WebSocketSubject.create('ws://localhost:8080');
+        socket$.subscribe(
+                (data) => console.log(data),
+                (err) => console.error(err),
+                () => console.warn('Completed!')
+            );
+        socket$.next(JSON.stringify({
+            event: 'events',
+            data: 'test',
+        }));
+    </script>
+</head>
+
+<body></body>
+
+</html>
