@@ -7,13 +7,30 @@ import { Cat } from './schemas/cat.schema';
 export class CatsController {
   constructor(private readonly catsService: CatsService) {}
 
+  @Post('createTable')
+  async createTable() {
+    await this.catsService.createCatsTable()
+      .catch(error => console.error(error));
+  }
+
+  @Post('deleteTable')
+  async deleteTable() {
+    await this.catsService.deleteCatsTable()
+      .catch(error => console.error(error));
+  }
+
   @Post()
   async create(@Body() createCatDto: CreateCatDto) {
-    this.catsService.create(createCatDto);
+    this.catsService.create(createCatDto)
+      .catch(error => console.error(error));
   }
 
   @Get()
   async findAll(): Promise<Cat[]> {
-    return this.catsService.findAll();
+    return this.catsService.findAll()
+      .catch(error => {
+        console.error(error);
+        return [];
+      });
   }
 }

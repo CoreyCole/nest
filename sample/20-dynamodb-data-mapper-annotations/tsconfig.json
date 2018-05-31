@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "lib": [
+      "esnext.asynciterable",
+      "es2015"
+    ],
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,

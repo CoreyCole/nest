@@ -5,6 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node src/main",
+    "docker": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker-down": "docker-compose --file docker-compose.yml down",
+    "list-tables": "aws dynamodb list-tables --region us-west-2 --endpoint-url http://0.0.0.0:8000 --output json",
     "prestart:prod": "tsc",
     "start:prod": "node dist/main.js"
   },

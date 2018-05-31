@@ -19,3 +19,6 @@ npm-debug.log
 
 # dist
 /dist
+
+# dynamoDB
+shared-local-instance.db
