@@ -4,7 +4,7 @@ The `@aws/data-mapper-annotations` package is built on top of the AWS SDK. The i
 #### Running the local example
 The local dynamoDB instance will be run using `docker-compose`. You'll need to install docker community edition. Then, you'll need to install node_modules (`npm i`).
 
-After you have your dependencies installed, run `npm start` and the nestJS webserver should be listening on port `3001`. The available endpoints are:
+After you have your dependencies installed, first run `npm run docker` to spin up the local dynamoDB container. Then, run `npm start` and the nestJS webserver should be listening on port `3001`. The available endpoints are:
 - POST `localhost:3001/cats/createTable`
 - POST `localhost:3001/cats/deleteTable`
 - POST `localhost:3001/cats`
